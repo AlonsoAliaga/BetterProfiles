@@ -5,7 +5,7 @@ This plugin adds a new way to display players profiles in your server.\
 \
 **This plugin does NOT include any quests, social or punish system.**
 ## Resources
-- [Spigot resource](https://www.spigotmc.org/resources/X/)
+- [Spigot resource](https://www.spigotmc.org/resources/83529/)
 - [Issue tracker](https://github.com/AlonsoAliaga/BetterProfiles/issues)
 - [Donate](https://paypal.me/AlonsoAliaga)
 - [bStats](https://bstats.org/plugin/bukkit/BetterProfiles)
