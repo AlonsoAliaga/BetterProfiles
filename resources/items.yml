@@ -1,6 +1,5 @@
-#THIS IS DEFAULT CONFIG FOR ITEMS.YML FILE FOR VERSION 0.7-BETA
+#THIS IS DEFAULT CONFIG FOR ITEMS.YML FILE FOR VERSION 0.9-BETA
 #CHECK EXAMPLES BELOW.
-
 Items:
   #Create as many items you want. REMEMBER EACH ITEM MUST HAVE A UNIQUE SLOT.
   #IN CASE YOU ADD MORE THAN 1 ITEM FOR THE SAME SLOT.
@@ -159,4 +158,21 @@ Items:
     - "&7be shown in profile!"
     #For items PLACEHOLDER
     #Commands WONT WORK IF PLAYER IS OFFLINE.
+    Commands: []
+  only-owner-item:
+    Slot: 13
+    Permission: "none"
+    Material: "ONLY_OWNER:CUSTOM_HEAD"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTA5Y2RlMWFmYzk1YTQ3NGQyMjI1NTQwOTdlZDZkMzkxZTdjYzdhZTFmMjAyZmRiZmQyZDZkYmM5ODMwOTM3MCJ9fX0="
+    Custom-model-data: 0
+    Displayname: "&e{PLAYER}"
+    Close-on-click: false
+    Lore:
+    - "&7Your IP: &a%player_ip%"
+    - "&7UUID: &a%player_uuid%"
+    - "&7Ping: &a%player_colored_ping%"
+    - ""
+    - "&7This is a ONLY_OWNER item."
+    - "&7It means that it can be seen"
+    - "&7by the profile owner only."
     Commands: []
