@@ -1,0 +1,172 @@
+#          ___      _   _           ___          __ _ _
+#         | _ ) ___| |_| |_ ___ _ _| _ \_ _ ___ / _(_) |___ ___
+#         | _ \/ -_)  _|  _/ -_) '_|  _/ '_/ _ \  _| | / -_|_-<
+#         |___/\___|\__|\__\___|_| |_| |_| \___/_| |_|_\___/__/
+#                           by AlonsoAliaga
+#          https://www.spigotmc.org/resources/authors/281176/
+#  Translation made by community. It wasn't checked by plugin developer.
+#
+Messages:
+  No-permission: '&cBunu yapmak için izniniz yok.'
+  View-command-no-permission: '&cProfili açmak için bir oyuncuya sağ tıklamalısınız.
+    &A[RANK] satın alın & bu komutu kullanmak için.'
+  View-interact-no-permission: '&cOyuncuların profillerini görüntüleyemezsiniz. Profilleri
+    görüntülemek için &a[RANK] &csatın alın.'
+  Reloaded: '&aBazı mesajlar ve seçenekler yeniden yüklendi. Diğerleri yeniden başlatma
+    gerektirebilir!'
+  Invalid-player: '&cOyuncu çevrimiçi değil!'
+  Disabled-world: '&cBu dünyada profiller devre dışı bırakıldı :('
+  Please-reconnect: '&cBir şeyler yanlış gitti! Lütfen sunucuya yeniden bağlanın.'
+  Please-reconnect-other: '&cBir şeyler yanlış gitti! Oynatıcının sunucuya yeniden
+    bağlanması gerekiyor.'
+  Profile-disabled-command: '&cKomut devre dışı bırakıldı! Profili görüntülemek için
+    oyuncuya sağ tıklayın!'
+  Profile:
+    Title: '&8Profil: {PLAYER}'
+    Profile-is-locked: '&cBu oyuncu profilini görüntüleyemezsiniz.'
+  Toggle-profiles:
+    No-permission: '&cBunu yapmak için izniniz yok.'
+    Profiles-locked: '&cProfiller devre dışı bırakıldı! Oyuncuların profilini şimdi
+      görmeyeceksiniz.'
+    Profiles-unlocked: '&aProfiller etkinleştirildi! Artık oyuncuların profillerini
+      göreceksiniz.'
+  Toggle-profile:
+    No-permission: '&cBunu yapmak için izniniz yok.'
+    Profile-locked: '&cProfil kilitlendi! Oyuncular artık profilinizi görüntüleyemez.'
+    Profile-unlocked: '&aProfil kilidi açıldı! Oyuncular artık profilinizi görebilir.'
+  Help:
+    Admin:
+    - '&6 /profile &f- &eProfilinizi kontrol edin'
+    - '&6 /profile <player> &f- &eOyuncunun profilini kontrol edin'
+    - '&6 /betterprofiles &f- &eProfilinizi kontrol edin'
+    - '&6 /betterprofiles view <player> &f- &eOyuncu profilini aç'
+    - '&6 /betterprofiles toggle <viewer/profile>&f- &eProfilleri görüntülemeyi /
+      göstermeyi değiştir'
+    - '&6 /betterprofiles reload &f- &eYapılandırmayı yeniden yükle'
+    User:
+    - '&6 /profile &f- &eProfilinizi kontrol edin'
+    - '&6 /betterprofiles &f- &eProfilinizi kontrol edin'
+    - '&6 /betterprofiles view <player> &f- &eOyuncunun profilini kontrol edin'
+    - '&6 /betterprofiles toggle <viewer/profile>&f- &eProfilleri görüntülemeyi /
+      göstermeyi değiştir'
+Items:
+  No-main-hand:
+    Custom-model-data: 0
+    Custom-model-data-hidden: 0
+    Displayname: '&eAna el'
+    Permission: none
+    Lore:
+    - '&cBoş'
+    Lore-hidden:
+    - '&cBu slotu göremezsiniz.'
+  No-off-hand:
+    Custom-model-data: 0
+    Custom-model-data-hidden: 0
+    Displayname: '&e2. El'
+    Permission: none
+    Lore:
+    - '&cBoş'
+    Lore-hidden:
+    - '&cBu slotu göremezsiniz.'
+  No-helmet:
+    Custom-model-data: 0
+    Custom-model-data-hidden: 0
+    Displayname: '&eKask'
+    Permission: none
+    Lore:
+    - '&cBoş'
+    Lore-hidden:
+    - '&cBu slotu göremezsiniz.'
+  No-chestplate:
+    Custom-model-data: 0
+    Custom-model-data-hidden: 0
+    Displayname: '&eZırh'
+    Permission: none
+    Lore:
+    - '&cBoş'
+    Lore-hidden:
+    - '&cBu slotu göremezsiniz.'
+  No-leggings:
+    Custom-model-data: 0
+    Custom-model-data-hidden: 0
+    Displayname: '&ePantolon'
+    Permission: none
+    Lore:
+    - '&cBoş'
+    Lore-hidden:
+    - '&cBu slotu göremezsiniz.'
+  No-boots:
+    Custom-model-data: 0
+    Custom-model-data-hidden: 0
+    Displayname: '&eBot'
+    Permission: none
+    Lore:
+    - '&cBoş'
+    Lore-hidden:
+    - '&cBu slotu göremezsiniz.'
+  Close:
+    Custom-model-data: 0
+    Displayname: '&cKapat'
+    Lore: []
+Options:
+  Debug: false
+  Prevent-shield: true
+  Prevent-interact: true
+  Only-sneak: false
+  Update-equipment: true
+  Fill-Boş:
+    Enabled: true
+    Custom-model-data: 0
+    Color-frame: WHITE
+  Boş-slot:
+    Color-frame: YELLOW
+  Hidden-slot:
+    Color-frame: RED
+  Check-visibility: true
+  Slots:
+    Close: 49
+    Helmet: 10
+    Chestplate: 19
+    Leggings: 28
+    Boots: 37
+    Main-hand: 20
+    Off-hand: 29
+  View:
+    Interact: true
+    Command: true
+  Disabled-worlds:
+  - world_pvp
+  Sounds:
+    Open: CHEST_OPEN
+    Close: CHEST_CLOSE
+  Fill-empty:
+    Enabled: true
+    Custom-model-data: 0
+    Color-frame: BLACK
+  Empty-slot:
+    Color-frame: WHITE
+Permissions:
+  Admin: betterprofiles.admin
+  View-interact: none
+  View-command: betterprofiles.view.command
+  Toggle-view-profiles: none
+  Toggle-profile: betterprofiles.toggle.profile
+  Bypass: betterprofiles.view.bypass
+  Own-profile: none
+Database:
+  Type: SQLite
+  Table: betterprofiles
+  File: database-betterprofiles
+  Host: 127.0.0.1
+  Port: 3306
+  Database: betterprofiles
+  Username: root
+  Password: '12345'
+  Keep-alive-interval: 30
+Updates:
+  Auto-update-configuration: true
+  Check-updates: true
+  Notify-updates: true
+  Permission: betterprofiles.update
+  Message: '&6[BetterProfiles] &eYeni bir güncelleme bulundu! {CURRENT} sürümünü kullanıyorsunuz.
+    {NEW} sürümünü buradan {LINK} indirin!'
