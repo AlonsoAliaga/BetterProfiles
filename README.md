@@ -1,6 +1,6 @@
 ![Logo](https://imgur.com/6s0WTUS.png)
 
-# BetterSocial
+# BetterProfiles
 This plugin adds a new way to display players profiles in your server.\
 \
 **This plugin does NOT include any quests, social or punish system.**
