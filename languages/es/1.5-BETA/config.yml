@@ -1,4 +1,4 @@
-##################################################################################################################################
+f##################################################################################################################################
 # Mensaje del desarrollador: Esta traducción fue hecha por un miembro de la comunidad. No puedo asegurar que sea 100% correcta.
 # Message from developer: This translation was provided by a community member. I can't say it's 100% accurate.
 ##################################################################################################################################
@@ -229,9 +229,9 @@ Database:
   #If type is MySQL
   Host: 127.0.0.1
   Port: 3306
-  Database: "profiles_database"
-  Username: "una_un_buen_usuario"
-  Password: "usa_una_buena_contraseña"
+  Database: "betterprofiles"
+  Username: "root"
+  Password: "123456"
   #This option has been added to prevent connection timeout.
   #Time is in minutes. Every X minutes the plugin will run a test query to keep connection alive.
   #This option is no longer used as HikariCP was implemented.
@@ -242,7 +242,7 @@ Database:
   #Useful if you want to set useSSL or autoReconnect or any other modifier.
   #This option is no longer used as HikariCP was implemented. Please use "HikariCP.Source-properties" options.
   #Remember this only applies if you are using "IWantMySQL", for "MySQL" and "HikariCP" you need to use options below.
-  Additional-url: ""
+  Additional-url: "?useSSL=false"
   HikariCP:
     Warning:
     - "========================================================================================"
