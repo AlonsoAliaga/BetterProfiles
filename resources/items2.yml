@@ -1,0 +1,354 @@
+#           ___      _   _           ___          __ _ _                   Our plugins: https://alonsoaliaga.com/plugins
+#          | _ ) ___| |_| |_ ___ _ _| _ \_ _ ___ / _(_) |___ ___           Support server: https://alonsoaliaga.com/discord
+#          | _ \/ -_)  _|  _/ -_) '_|  _/ '_/ _ \  _| | / -_|_-<           Youtube: https://alonsoaliaga.com/play
+#          |___/\___|\__|\__\___|_| |_| |_| \___/_| |_|_\___/__/           Test server: plugins.alonsoaliaga.com
+#                            by AlonsoAliaga                               Twitch: https://alonsoaliaga.com/twitch
+#          Considering donating? https://alonsoaliaga.com/donate           Thanks for using my plugin <3.
+Items:
+  #Create as many items you want. REMEMBER EACH ITEM MUST HAVE A UNIQUE SLOT.
+  #IN CASE YOU ADD MORE THAN 1 ITEM FOR THE SAME SLOT.
+  #It will be read in order. SO MAKE SURE YOU ADD THE ITEM with higher priority first here.
+  ########################### IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ###################################
+  #    FOR OBVIOUS REASONS IF A PLAYER IS OFFLINE PLACEHOLDERS CANNOT BE PARSED, SO TRY NOT TO USE THEM IN COMMANDS
+  ########################### IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ###################################
+  #Identifiers must be lower case and can only contain dashes (but not at the beginning or at the end)
+  player:
+    Slot: 22
+    #Set to "none" to not require permission.
+    Permission: "none" #Example: "betterprofiles.item.profile"
+    #Available item types:
+    # REGULAR => By default all items are regular.
+    # VIEWER_HEAD => Viewer head. (Requires BetterProfilesPro)
+    # PROFILE_OWNER => Profile owner head.
+    # THIRD_PARTY_API => Allows ITEM_ADDER and ORAXEN identifiers. (Requires BetterProfilesPro)
+    # DYNAMIC => Displays the item in the slot specified in "Dynamic-slot" (DOESN'T UPDATE AUTOMATICALLY)
+    Item-type: "PROFILE_OWNER"
+    #Available view types:
+    # REGULAR => Always displays the item. The normal view type. (By default this is the regular type)
+    # ONLY_OWNER => Displays the item if the viewer is the profile owner.
+    # ONLY_VIEWER => Displays the item if the viewer is NOT the profile owner.
+    # PLACEHOLDER => Displays the item if the parsed placeholder result is EQUAL to the value in "Accepted"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    #This is the material if the Item type requires it.
+    #Supports CUSTOM_HEAD (which requires a Texture value)
+    #Supports CUSTOM_ITEM (Require BetterProfilesPro)
+    Material: "COBBLESTONE"
+    #This is durability data for old versions.
+    #This can be used for example to use a red dye in old versions by specifying INK_SACK and 14 in data slot.
+    #This will be ignored in all dynamic items, PROFILE_OWNER and CUSTOM_HEAD. Set to -1 to disable.
+    #USE ONLY IF YOU REALLY REQUIRE TO SPECIFY A VALUE.
+    Data: -1
+    #Custom model data for the item. In case you want to use a custom texture pack and make it look like a real RPG inventory.
+    #Available only in 1.14 and above. Set to 0 if you are not going to use a custom resource pack in your server.
+    #It won't take effect if Material is PROFILE_OWNER or CUSTOM_HEAD
+    #If material is DYNAMIC, custom model data will be applied to the frame used.
+    Custom-model-data: 0
+    #This is ONLY REQUIRED if Item-type is "DYNAMIC"
+    #Dynamic material displays the current item in player inventory at the moment the profile was opened.
+    #These items DON'T UPDATE automatically.
+    Dynamic-slot: 0
+    #Available placeholder: {OWNER} replaced by profile owner name.
+    # {PLAYER} replaced by player that is viewing the profile.
+    #PlaceholderAPI supported if available.
+    #If material is "DYNAMIC" displayname will be used in "no item here" item if slot is empty.
+    Displayname: "&8%vault_prefix% {OWNER}"
+    #Available placeholder: {OWNER} replaced by profile owner name.
+    # {PLAYER} replaced by player that is viewing the profile.
+    #PlaceholderAPI supported if available.
+    #If material is "DYNAMIC" displayname will be used in "no item here" item for lore if slot is empty.
+    Lore:
+    - "&7 Network level: &a%alonsolevels_level% &8(&7%alonsolevels_progress_percent_format%&8)"
+    - "&7 Progress: &7%alonsolevels_progress_format%"
+    - "&7 %alonsolevels_progress_bar_format%"
+    - "&7 Health: &c%player_health_rounded%&7/&c%player_max_health_rounded%"
+    - "&7 Food: &e%player_food_level%"
+    #- "&7 Ping: &f%player_colored_ping%ms"
+    #Flags can be found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html
+    #Add "ALL" to add all available ones.
+    Hide-flags:
+    - "ALL"
+    #If enabled, item will receive glowing effect by adding the enchantment LURE and enchantments will be hidden.
+    Glow: false
+    #If true the profile will be closed before running the commands.
+    Close-on-click: false
+    #These commands will be run AS the player by defaullt. Available placeholders:
+    # {PLAYER} the player that is clicking.
+    # {TARGET} the profile owner.
+    # {PLAYER_WORLD} the world of the player that is clicking.
+    # {PLAYER_UUID} the uuid of the player that is clicking.
+    # {TARGET_UUID} the uuid of the profile owner.
+    #PlaceholderAPI is not supported. It will parse placeholders for the viewer, NOT THE TARGET.
+    #Set to " Commands: [] " to disable commands.
+    Commands: []
+  request-tpa:
+    Slot: 15
+    Permission: "none"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    Material: "FEATHER"
+    Custom-model-data: 0
+    Displayname: "&aTeleport Request"
+    Lore:
+    - "&eSend a tp request!"
+    Close-on-click: true
+    Commands:
+    - "tpa {TARGET}"
+  trade-request:
+    Slot: 16
+    Permission: "none"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    Material: "EMERALD"
+    Custom-model-data: 0
+    Displayname: "&aTrade Request"
+    Lore:
+    - "&eSend a trade request!"
+    Close-on-click: true
+    Commands:
+    - "trade {TARGET}"
+  economy:
+    Slot: 42
+    Permission: "none"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    Material: "CUSTOM_HEAD"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzM5MGM3MWNjOTQ3YWFiYzA1NzU4ZjNjNDk5NGEzMWZiNTgyMWZkNTE2ZjExYjBkOWUxOWU5YzQ3MWE2NDZmNyJ9fX0="
+    Custom-model-data: 0
+    Displayname: "&aBalance"
+    Close-on-click: false
+    Lore:
+    - "&7Money: &6%vault_eco_balance_commas%"
+    - "&7Rank: &6%essentials_baltop_rank%"
+    Commands: []
+  media:
+    Slot: 43
+    Permission: "none"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    Material: "CUSTOM_HEAD"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWVkYzgxZWQ1YzBhZWJmM2ZiNTNhYjMyZmFkOTE0ODU1ZTE0Yzc3MWI5MDU0NWYzYjIxZjFiMDkzNTEzNDA1MyJ9fX0="
+    Custom-model-data: 0
+    Displayname: "&aSocial media"
+    Close-on-click: true
+    Lore:
+    - "&eClick to open!"
+    Commands:
+    - "bettersocial media {TARGET}"
+  punish:
+    Slot: 31
+    Permission: "betterprofiles.items.punish"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    Material: "CUSTOM_HEAD"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTZiMWQ0OTQ3NzYzOTE3ODE0YWUxNjMyYjgyMDY5NjA5ODkyNzg5NWFhYWYxMjRjZDI5ZWIzNTg1NmFhYTViOSJ9fX0="
+    Custom-model-data: 0
+    Displayname: "&aPunish options"
+    Close-on-click: true
+    Lore:
+    - "&eClick to open GUI!"
+    Commands:
+    - "punish {TARGET}"
+  hexcoloritem:
+    Slot: 33
+    Permission: "none"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    Material: "CUSTOM_HEAD"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTlhMjIwNTU1NGY0ZmQ4NDMxY2NhMzRkYTlmNGQ5ODYyMDU4NDg4YmJjNGIwZDY3MTk0MzJkMTEwYzUzYTA3ZCJ9fX0="
+    Custom-model-data: 0
+    Displayname: "&#fa1959&lHex color support!"
+    Close-on-click: false
+    Lore:
+    - "&#aaff00This is a custom color!"
+    - "&#801d04This text is brown!"
+    - ""
+    - "&eAvailable only for 1.16 and above!"
+    Commands: []
+  ring-in-slot-9:
+    Slot: 11
+    Dynamic-slot: 9
+    Permission: "none"
+    Item-type: "DYNAMIC"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    Material: "RED_STAINED_GLASS_PANE"
+    Custom-model-data: 0
+    Displayname: "&eRing"
+    Close-on-click: false
+    Lore:
+    - "&cEmpty"
+    #Flags can be found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html
+    #Add "ALL" to add all available ones.
+    Hide-flags:
+    - "ALL"
+    #This option is only available in BetterProfilesPro. Get it on https://alonsoaliaga.com/BetterProfilesPro
+    Dynamic-data:
+      #Flags can be found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html
+      #Add "ALL" to add all available ones.
+      Item-flags:
+      - "ALL"
+      Remove-durability: false
+      Convert-unbreakable: false
+      #Materials that will be filtered to add the options above.
+      Filtered-materials:
+      - "endsWith=_SWORD"
+      - "endsWith=_HOE"
+      - "endsWith=_AXE"
+      - "endsWith=_SHOVEL"
+      - "endsWith=_SPADE"
+      - "endsWith=_PICKAXE"
+      - "endsWith=_HELMET"
+      - "endsWith=_CHESTPLATE"
+      - "endsWith=_LEGGINGS"
+      - "endsWith=_BOOTS"
+      - "endsWith=_SKULL"
+      - "endsWith=_HEAD"
+      - "ELYTRA"
+      - "SHIELD"
+      - "BOW"
+      - "CROSSBOW"
+      - "TRIDENT"
+      #Filter mode to apply the list above. Can be WHITELIST or BLACKLIST
+      Filter-mode: WHITELIST
+    Commands: []
+  pendant-in-slot-10:
+    Slot: 38
+    Dynamic-slot: 10
+    Permission: "none"
+    Item-type: "DYNAMIC"
+    View-types:
+      type1:
+        Type: "REGULAR"
+    Material: "RED_STAINED_GLASS_PANE"
+    Custom-model-data: 0
+    Displayname: "&ePendant"
+    Close-on-click: false
+    Lore:
+    - "&cEmpty"
+    #Flags can be found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html
+    #Add "ALL" to add all available ones.
+    Hide-flags:
+    - "ALL"
+    #This option is only available in BetterProfilesPro. Get it on https://alonsoaliaga.com/BetterProfilesPro
+    Dynamic-data:
+      #Flags can be found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html
+      #Add "ALL" to add all available ones.
+      Item-flags:
+      - "ALL"
+      Remove-durability: false
+      Convert-unbreakable: false
+      #Materials that will be filtered to add the options above.
+      Filtered-materials:
+      - "endsWith=_SWORD"
+      - "endsWith=_HOE"
+      - "endsWith=_AXE"
+      - "endsWith=_SHOVEL"
+      - "endsWith=_SPADE"
+      - "endsWith=_PICKAXE"
+      - "endsWith=_HELMET"
+      - "endsWith=_CHESTPLATE"
+      - "endsWith=_LEGGINGS"
+      - "endsWith=_BOOTS"
+      - "endsWith=_SKULL"
+      - "endsWith=_HEAD"
+      - "ELYTRA"
+      - "SHIELD"
+      - "BOW"
+      - "CROSSBOW"
+      - "TRIDENT"
+      #Filter mode to apply the list above. Can be WHITELIST or BLACKLIST
+      Filter-mode: WHITELIST
+    Commands: []
+  placeholder-item:
+    Slot: 13
+    Permission: "none"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "PLACEHOLDER"
+        #Placeholder will be parsed FOR the profile owner. NOT THE VIEWER.
+        Placeholder: "%player_allow_flight%"
+        #Placeholder can return "yes" and "no" for %player_allow_flight% placeholder.
+        #Item will be displayed if placeholder returns the Accepted value.
+        #It accepts Regex expressions if "Regex" option is enabled.
+        #Suggestion: Add (?i) at the beginning to make that string case insensitive.
+        Accepted: "(?i)yes"
+        #Should accepted value be used as regex expression?
+        #Enable this ONLY if you know what it means.
+        Regex: true
+    Material: "CUSTOM_HEAD"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFmODE1MWRlYjM5NTUzMjkyYjlhNjk2NzQ4MzJkZGE4MDAxNzgwY2E5ODE4MGEwNmVhZjliMzY4OTMwYjViYiJ9fX0="
+    Custom-model-data: 0
+    Displayname: "&e{PLAYER} can fly!"
+    Close-on-click: false
+    Lore:
+    - "&aPlayer is allowed to fly!"
+    - ""
+    - "&7This is a placeholder item."
+    - "&7If placeholder output is equal"
+    - "&7to the accepted value, it will"
+    - "&7be shown in profile!"
+    #For items PLACEHOLDER
+    #Commands WONT WORK IF PLAYER IS OFFLINE.
+    Commands: []
+  only-owner-item:
+    Slot: 48
+    Permission: "none"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "ONLY_OWNER"
+    Material: "CUSTOM_HEAD"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTA5Y2RlMWFmYzk1YTQ3NGQyMjI1NTQwOTdlZDZkMzkxZTdjYzdhZTFmMjAyZmRiZmQyZDZkYmM5ODMwOTM3MCJ9fX0="
+    Custom-model-data: 0
+    Displayname: "&e{PLAYER}"
+    Close-on-click: false
+    Lore:
+    #- "&7Your IP: &a%player_ip%"
+    - "&7UUID: &a%player_uuid%"
+    #- "&7Ping: &a%player_colored_ping%"
+    - ""
+    - "&7This is a ONLY_OWNER item."
+    - "&7It means that it can be seen"
+    - "&7by the profile owner only."
+    Commands: []
+  only-viewer-item:
+    Slot: 50
+    Permission: "none"
+    Item-type: "REGULAR"
+    View-types:
+      type1:
+        Type: "ONLY_VIEWER"
+    Material: "CUSTOM_HEAD"
+    Texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTA5Y2RlMWFmYzk1YTQ3NGQyMjI1NTQwOTdlZDZkMzkxZTdjYzdhZTFmMjAyZmRiZmQyZDZkYmM5ODMwOTM3MCJ9fX0="
+    Custom-model-data: 0
+    Displayname: "&e{PLAYER}"
+    Close-on-click: false
+    Lore:
+    #Careful, next line will show target ip to viewer.
+    #- "&7Your IP: &a%player_ip%"
+    - "&7{PLAYER}'s UUID: &a%player_uuid%"
+    #- "&7{PLAYER}'s Ping: &a%player_colored_ping%"
+    - ""
+    - "&7This is a ONLY_VIEWER item."
+    - "&7It means that it can be seen"
+    - "&7by the viewer only."
+    - ""
+    - "&7If owner opens his own profile"
+    - "&7this item wont be displayed!"
+    Commands: []
