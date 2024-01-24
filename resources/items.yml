@@ -1,9 +1,10 @@
+#THIS CONFIGURATION IS FOR BetterProfiles 1.6-BETA AND NEWER VERSIONS. PENDING TO RELEASE!!!
 #           ___      _   _           ___          __ _ _                   Our plugins: https://alonsoaliaga.com/plugins
 #          | _ ) ___| |_| |_ ___ _ _| _ \_ _ ___ / _(_) |___ ___           Support server: https://alonsoaliaga.com/discord
 #          | _ \/ -_)  _|  _/ -_) '_|  _/ '_/ _ \  _| | / -_|_-<           Youtube: https://alonsoaliaga.com/play
 #          |___/\___|\__|\__\___|_| |_| |_| \___/_| |_|_\___/__/           Test server: plugins.alonsoaliaga.com
 #                            by AlonsoAliaga                               Twitch: https://alonsoaliaga.com/twitch
-#          Considering donating? https://alonsoaliaga.com/donate           Thanks for using my plugin <3.
+#          Considering donating? https://alonsoaliaga.com/donate           More features? Consider purchasing https://alonsoaliaga.com/BetterProfilesPro
 Items:
   #Create as many items you want. REMEMBER EACH ITEM MUST HAVE A UNIQUE SLOT.
   #IN CASE YOU ADD MORE THAN 1 ITEM FOR THE SAME SLOT.
